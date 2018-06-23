@@ -65,7 +65,7 @@ deploy_lab:
     - 'which ssh-agent || ( apt-get update && apt-get install openssh-client )'
     - eval $(ssh-agent -s)
     - mkdir -p ~/.ssh && chmod 700 ~/.ssh
-    - echo "$STAGING_USER_KEY" > ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa
+    - echo "$LAB_USER_KEY" > ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa
     - sed -n ':a;N;$!ba;s/\n/ /g' ~/.ssh/id_rsa
     - ssh-add ~/.ssh/id_rsa
     - gem install capistrano-rails
