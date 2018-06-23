@@ -36,7 +36,13 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'ancestry'
+gem 'apipie-rails', '~> 0.5'
+
+gem 'git'
+
 gem 'jekyll'
+gem 'pdfkit'
 
 # Use Capistrano for deployment
 group :development do
@@ -50,7 +56,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
 
   gem 'rspec-rails'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'database_cleaner'
 end
 
