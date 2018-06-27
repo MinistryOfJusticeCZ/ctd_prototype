@@ -2,6 +2,10 @@ class Template < ApplicationRecord
 
   enum format: DocumentGenerator::FORMATS
 
+  def file_name
+    name + '.' + format.to_s
+  end
+
   def templates_repo_uri
     "git@git.servis.justice.cz:ctd-templates/core.git"
   end
@@ -26,10 +30,25 @@ class Template < ApplicationRecord
     fetch_git_templates
     prepare_data(context, input)
 
-    Jekyll::Commands::Build.process('source' => repo_directory.to_s, 'destination' => generate_directory)
+    Jekyll::Commands::Build.process(jekyll_opts)
 
     kit = PDFKit.new(File.new(generate_directory.join(name+'.html')))
     kit.to_pdf
+  end
+
+  def jekyll_page
+    config = jekyll_configuration
+    Jekyll::Page.new(Jekyll::Site.new(config), config.source({}), '/', file_name)
+  end
+
+  def body
+    return @body unless @body.nil?
+    fetch_git_templates
+    @body = File.read(repo_directory.join(name + '.' + format.to_s))
+  end
+
+  def html
+    body
   end
 
   def fetch_git_templates
@@ -38,13 +57,21 @@ class Template < ApplicationRecord
     else
       g = Git.clone(templates_repo_uri, directory_name, path: working_directory)
     end
-    g.fetch
+    g.pull
   end
 
   def prepare_data(context, input)
     data_dir = repo_directory.join('_data')
     File.open(data_dir.join('context.json'), 'w') { |file| file.write(context.to_json) }
     File.open(data_dir.join('input.json'), 'w') { |file| file.write(input.to_json) }
+  end
+
+  def jekyll_configuration
+    Jekyll.configuration(jekyll_opts)
+  end
+
+  def jekyll_opts
+    {'source' => repo_directory.to_s, 'destination' => generate_directory}
   end
 
 end

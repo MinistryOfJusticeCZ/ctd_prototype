@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/ezr-ondrej/mercury.git
+  revision: f2ed9842e34b0b1040dbe4482c24326960a755b4
+  branch: master
+  specs:
+    mercury-rails (0.9.0)
+      coffee-rails (>= 3.2.2)
+      railties (>= 3.0)
+
 PATH
   remote: ../azahara_schema
   specs:
@@ -103,7 +112,7 @@ GEM
     arel (9.0.0)
     audited (4.7.1)
       activerecord (>= 4.0, < 5.3)
-    autoprefixer-rails (8.6.3)
+    autoprefixer-rails (8.6.4)
       execjs
     bcrypt (3.1.12)
     bindex (0.5.0)
@@ -402,6 +411,7 @@ DEPENDENCIES
   jekyll
   jquery-rails
   listen (~> 3.0)
+  mercury-rails!
   pdfkit
   pg
   pry-rails

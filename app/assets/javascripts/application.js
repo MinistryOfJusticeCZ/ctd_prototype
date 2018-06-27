@@ -12,5 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require turbolinks
-//= require_tree .
+//= require tether
+//= require azahara_schema/application
+//= require egov_utils/application
+//= require_tree ./channels

@@ -44,6 +44,8 @@ gem 'git'
 gem 'jekyll'
 gem 'pdfkit'
 
+gem 'mercury-rails', github: 'ezr-ondrej/mercury', branch: 'master'
+
 # Use Capistrano for deployment
 group :development do
   gem 'capistrano-rails'
