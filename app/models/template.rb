@@ -7,7 +7,7 @@ class Template < ApplicationRecord
   end
 
   def templates_repo_uri
-    "git@git.servis.justice.cz:ctd-templates/core.git"
+    "git@git.justice.cz:ctd-templates/core.git"
   end
 
   def working_directory
@@ -37,14 +37,23 @@ class Template < ApplicationRecord
   end
 
   def jekyll_page
+    return @jekyll_page unless @jekyll_page.nil?
+    fetch_git_templates
     config = jekyll_configuration
-    Jekyll::Page.new(Jekyll::Site.new(config), config.source({}), '/', file_name)
+    @jekyll_page = Jekyll::Page.new(Jekyll::Site.new(config), config.source({}), '/', file_name)
+  end
+
+  def body=(value)
+    jekyll_page.content = value
+    File.open(repo_directory.join(file_name), 'w') do |f|
+      f.write jekyll_page.data.to_yaml
+      f.write "---\n"
+      f.write jekyll_page.content
+    end
   end
 
   def body
-    return @body unless @body.nil?
-    fetch_git_templates
-    @body = File.read(repo_directory.join(name + '.' + format.to_s))
+    jekyll_page.content
   end
 
   def html

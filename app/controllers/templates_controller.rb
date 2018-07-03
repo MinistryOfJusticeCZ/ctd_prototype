@@ -12,4 +12,12 @@ class TemplatesController < ApplicationController
   def edit
   end
 
+  def update
+    @template.body = update_params['value']
+  end
+
+  def update_params
+    params['content'].require('template').permit!
+  end
+
 end

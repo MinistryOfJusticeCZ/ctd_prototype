@@ -9,6 +9,7 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1'
 
+gem 'rdoc'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', group: [:development, :test]
@@ -44,7 +45,7 @@ gem 'git'
 gem 'jekyll'
 gem 'pdfkit'
 
-gem 'mercury-rails', github: 'ezr-ondrej/mercury', branch: 'master'
+gem 'mercury-rails', path: '/home/ondra/Documents/CommunityProjects/mercury' #, github: 'ezr-ondrej/mercury', branch: 'master'
 
 # Use Capistrano for deployment
 group :development do
