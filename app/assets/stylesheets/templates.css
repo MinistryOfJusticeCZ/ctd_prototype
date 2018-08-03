@@ -1,0 +1,152 @@
+html {
+  overflow-y: scroll;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  vertical-align: baseline;
+}
+
+.row {
+  overflow: auto;
+}
+
+.col-3 {
+  float: left;
+  width: 33.3333%;
+}
+
+.col-6 {
+  float: left;
+  width: 50%;
+}
+
+.col-9 {
+  float: left;
+  width: 66.6666%;
+}
+
+.col-12 {
+  float: left;
+  width: 100%;
+}
+
+/*h1*/
+.heading-xl {
+  font-size: 45px;
+  line-height: 1.25;
+  font-weight: bold;
+  margin-top: 25px;
+}
+
+/*h2*/
+.heading-lg {
+  font-size: 21px;
+  line-height: 1.25;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/*h3*/
+.heading-md {
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: bold;
+  margin-top: 25px;
+  margin-bottom: 1.5rem;
+}
+
+/*h4*/
+.heading-sm {
+  font-size: 14px;
+  line-height: 1.25;
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.page-title__subtitle {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.33;
+  margin-top: 0.5rem;
+  margin-bottom: 0.833rem;
+}
+
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 842px;
+}
+
+#content {
+  padding: 0 0 90px;
+  margin: 30px auto 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+
+.additional-information {
+  width: 66.666%;
+  display: table;
+  line-height: 16px;
+  font-size: 13px;
+}
+
+.additional-information--highlight {
+  /*background-color: #e1e3e3;*/
+  border-color: #000;
+  border-left-style: solid;
+  border-left-width: 3px;
+  margin-bottom: 15px;
+  margin-top: 45px;
+  padding-left: 1.5rem;
+}
+
+.additional-information__contents {
+  display: table-row;
+  position: relative;
+}
+
+.additional-information__contents--border {
+  border-bottom: 1px solid #bfc1c3;
+}
+
+.additional-information__name {
+  font-weight: bold;
+  width: 33.3%;
+  display: table-cell;
+  padding-right: 1em;
+  padding-bottom: 0.5rem;
+}
+
+.additional-information__description {
+  display: table-cell;
+  padding-right: 1em;
+  padding-bottom: 0.5rem;
+}
+
+.label {
+  font-size: 13px;
+}
+
+.textarea {
+  border: 2px solid #000;
+  box-sizing: border-box;
+  border-radius: 0;
+  display: block;
+  margin-bottom: 20px;
+  resize: none;
+  width: 100%;
+}
+
+.signature-hand {
+  margin-top: 45px;
+}
+
+.signature-date {
+  float: right;
+}
