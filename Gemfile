@@ -13,7 +13,7 @@ gem 'rdoc'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', group: [:development, :test]
-gem 'pg', group: [:production, :test]
+gem 'pg', '~> 1.0', group: [:production, :test]
 
 # Use Puma as the app server
 gem 'unicorn', '~> 5.4'
@@ -34,8 +34,6 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
 
 gem 'ancestry'
 gem 'apipie-rails', '~> 0.5'
@@ -45,7 +43,7 @@ gem 'git'
 gem 'jekyll'
 gem 'pdfkit'
 
-gem 'mercury-rails', path: '/home/ondra/Documents/CommunityProjects/mercury' #, github: 'ezr-ondrej/mercury', branch: 'master'
+gem 'mercury-rails', github: 'ezr-ondrej/mercury', branch: 'master'
 
 # Use Capistrano for deployment
 group :development do
@@ -77,9 +75,3 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'egov_utils', '~> 0.4'
-
-#UI gems
-source 'https://rails-assets.org' do
-  gem 'rails-assets-tether', '>= 1.3.3'
-end
-
