@@ -1,6 +1,8 @@
 # config valid only for current version of Capistrano
 lock "~> 3.10"
 
+set :branch, ENV.fetch('REVISION', 'master')
+
 set :application, "document_generator"
 set :repo_url, "git@git.servis.justice.cz:justice_core/document_generator.git"
 
