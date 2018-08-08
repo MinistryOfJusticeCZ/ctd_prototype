@@ -7,7 +7,7 @@ class Template < ApplicationRecord
   end
 
   def templates_repo_uri
-    "git@git.justice.cz:ctd-templates/core.git"
+    "git@git.servis.justice.cz:ctd-templates/core.git"
   end
 
   def working_directory
