@@ -1,24 +1,11 @@
-# README
+# Justice documents generator prototype
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Version of generator - simple PoC written in Rails, using Jekyll as a generator.
 
-Things you may want to cover:
+Another repository with the templates is needed for this to work.
 
-* Ruby version
+It is simple repository for jekyll site.
 
-* System dependencies
+No more documentation is provided, as long as it is really simple PoC.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+We are sorry for any inconvenience, but you can reach with us for further information.
